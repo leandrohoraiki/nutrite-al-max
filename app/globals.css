@@ -791,6 +791,96 @@ section {
   color: #a781e0;
 }
 
+/* fondo y textura */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(rgba(79, 36, 144, 0.06) 1px, transparent 1px);
+  background-size: 26px 26px;
+  background-position: -6px -6px;
+}
+
+.nam-section {
+  position: relative;
+}
+
+.nam-section > .nam-container {
+  position: relative;
+  z-index: 1;
+}
+
+.nam-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    620px circle at 86% 8%,
+    rgba(79, 36, 144, 0.1),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+#guias::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    520px circle at 92% 0%,
+    rgba(79, 36, 144, 0.08),
+    transparent 62%
+  );
+  pointer-events: none;
+}
+
+#consultas::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+      480px circle at 4% 92%,
+      rgba(79, 36, 144, 0.07),
+      transparent 60%
+    ),
+    radial-gradient(rgba(79, 36, 144, 0.045) 1px, transparent 1px);
+  background-size: auto, 26px 26px;
+  background-position: 0 0, -6px -6px;
+  pointer-events: none;
+}
+
+#consultas::after,
+.nam-footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  z-index: 1;
+  background: linear-gradient(90deg, var(--violet) 0%, transparent 72%);
+  transform-origin: left;
+  transform: skewY(-1deg);
+  pointer-events: none;
+}
+
+.nam-footer {
+  position: relative;
+}
+
+@media (prefers-contrast: more) {
+  body::before,
+  .nam-hero::before,
+  #guias::before,
+  #consultas::before {
+    display: none;
+  }
+}
+
 @media (max-width: 920px) {
   .nam-hero-grid {
     grid-template-columns: minmax(0, 1fr) minmax(260px, 0.7fr);
@@ -871,4 +961,3 @@ section {
     animation-duration: 0.01ms !important;
   }
 }
-
