@@ -130,6 +130,7 @@ export default function Home() {
           <div className="nam-header-actions">
             <nav className="nam-nav" aria-label="Navegación principal">
               <a href="#inicio">Inicio</a>
+              <a href="#sobre-mi">Sobre mí</a>
               <a href="#guias">Guías</a>
               <a href="#consultas">Consultas</a>
             </nav>
@@ -208,10 +209,75 @@ export default function Home() {
           </div>
         </div>
 
+        <section
+          className="nam-section nam-about"
+          id="sobre-mi"
+          aria-labelledby="about-title"
+        >
+          <div className="nam-container nam-about-grid">
+            <div className="nam-about-photo-wrap">
+              <img
+                className="nam-about-photo"
+                src="/nutrite-al-max-retrato.webp"
+                alt="Leandro Horaiki, Licenciado en Nutrición"
+              />
+            </div>
+
+            <div>
+              <div className="nam-section-tag">
+                <span className="nam-num">01</span>
+                <span className="nam-section-tag-rule" />
+              </div>
+              <div className="nam-section-heading">
+                <p className="nam-eyebrow">Sobre mí</p>
+                <h2 id="about-title">Formación y enfoque profesional.</h2>
+              </div>
+              <p className="nam-about-text">
+                Soy Leandro Horaiki, Licenciado en Nutrición. Combino la
+                formación clínica con la antropometría ISAK II y una
+                especialización en nutrición deportiva para trabajar con
+                información medible: composición corporal, objetivos de
+                rendimiento y hábitos que se sostengan en el tiempo.
+              </p>
+
+              <ul className="nam-about-creds" aria-label="Formación profesional">
+                <li>
+                  <span className="nam-about-cred-title">
+                    Licenciado en Nutrición
+                  </span>
+                  <span className="nam-about-cred-desc">
+                    Formación universitaria en nutrición clínica y
+                    alimentación.
+                  </span>
+                </li>
+                <li>
+                  <span className="nam-about-cred-title">
+                    Antropometrista ISAK II
+                  </span>
+                  <span className="nam-about-cred-desc">
+                    Certificación internacional (International Society for
+                    the Advancement of Kinanthropometry) para medir
+                    composición corporal con precisión.
+                  </span>
+                </li>
+                <li>
+                  <span className="nam-about-cred-title">
+                    Diplomado en Nutrición Deportiva
+                  </span>
+                  <span className="nam-about-cred-desc">
+                    Especialización en alimentación aplicada al rendimiento
+                    y la actividad física.
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
         <section className="nam-section" id="guias" aria-labelledby="guides-title">
           <div className="nam-container">
             <div className="nam-section-tag">
-              <span className="nam-num">01</span>
+              <span className="nam-num">02</span>
               <span className="nam-section-tag-rule" />
             </div>
             <div className="nam-section-heading">
@@ -267,7 +333,7 @@ export default function Home() {
             />
             <div className="nam-consult-intro">
               <div className="nam-section-tag">
-                <span className="nam-num">02</span>
+                <span className="nam-num">03</span>
                 <span className="nam-section-tag-rule" />
               </div>
               <p className="nam-eyebrow">Contacto profesional</p>
@@ -375,4 +441,3 @@ export default function Home() {
     </>
   );
 }
-
