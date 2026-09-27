@@ -22,7 +22,10 @@ body {
   min-width: 320px;
   margin: 0;
   overflow-x: hidden;
-  background: var(--paper);
+  background-color: var(--paper);
+  background-image: radial-gradient(rgba(79, 36, 144, 0.06) 1px, transparent 1px);
+  background-size: 26px 26px;
+  background-position: -6px -6px;
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -792,16 +795,6 @@ section {
 }
 
 /* fondo y textura */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image: radial-gradient(rgba(79, 36, 144, 0.06) 1px, transparent 1px);
-  background-size: 26px 26px;
-  background-position: -6px -6px;
-}
-
 .nam-section {
   position: relative;
 }
@@ -873,11 +866,13 @@ body::before {
 }
 
 @media (prefers-contrast: more) {
-  body::before,
   .nam-hero::before,
   #guias::before,
   #consultas::before {
     display: none;
+  }
+  body {
+    background-image: none;
   }
 }
 
