@@ -218,7 +218,7 @@ export default function Home() {
             <div className="nam-about-photo-wrap">
               <img
                 className="nam-about-photo"
-                src="/nutrite-al-max-retrato.webp"
+                src="/nutrite-al-max-sobre-mi.webp"
                 alt="Leandro Horaiki, Licenciado en Nutrición"
               />
             </div>
