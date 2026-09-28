@@ -197,7 +197,7 @@ section {
   left: 0;
   right: 0;
   bottom: -8%;
-  height: 62%;
+  height: 78%;
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
@@ -209,7 +209,7 @@ section {
   margin-left: -2%;
   margin-top: -2%;
   object-fit: cover;
-  object-position: center 32%;
+  object-position: center 42%;
   opacity: 0.9;
   -webkit-mask-image: linear-gradient(
     to bottom,
@@ -837,7 +837,17 @@ section {
 
 /* footer */
 .nam-footer {
-  background: var(--ink);
+  background-color: var(--ink);
+  background-image: linear-gradient(
+      180deg,
+      rgba(13, 13, 13, 0.8) 0%,
+      rgba(13, 13, 13, 0.88) 45%,
+      rgba(13, 13, 13, 0.95) 100%
+    ),
+    url("/nutrite-al-max-footer.webp");
+  background-size: cover;
+  background-position: center 34%;
+  background-repeat: no-repeat;
   color: #fff;
   padding-block: 56px 24px;
 }
