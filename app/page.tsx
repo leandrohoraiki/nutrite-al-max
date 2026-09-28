@@ -32,6 +32,19 @@ function ArrowIcon() {
   );
 }
 
+function ChevronIcon() {
+  return (
+    <svg
+      className="nam-about-chevron"
+      viewBox="0 0 16 16"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M4 6.5 8 10l4-3.5" />
+    </svg>
+  );
+}
+
 function WhatsappIcon() {
   return (
     <svg
@@ -67,6 +80,7 @@ export default function Home() {
   const [hero, setHero] = useState({ mx: 0, my: 0 });
   const [card1, setCard1] = useState<SpotState>(idleSpot);
   const [card2, setCard2] = useState<SpotState>(idleSpot);
+  const [aboutOpen, setAboutOpen] = useState(false);
 
   function handleHeroMove(e: MouseEvent<HTMLElement>) {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -130,9 +144,9 @@ export default function Home() {
           <div className="nam-header-actions">
             <nav className="nam-nav" aria-label="Navegación principal">
               <a href="#inicio">Inicio</a>
-              <a href="#sobre-mi">Sobre mí</a>
               <a href="#guias">Guías</a>
               <a href="#consultas">Consultas</a>
+              <a href="#sobre-mi">Sobre mí</a>
             </nav>
             <a
               className="nam-header-cta"
@@ -157,7 +171,7 @@ export default function Home() {
         >
           <div className="nam-hero-photo-wrap" aria-hidden="true">
             <img
-              src="/nutrite-al-max-runners.webp"
+              src="/nutrite-al-max-hero.webp"
               alt=""
               style={heroPhotoStyle}
             />
@@ -209,75 +223,10 @@ export default function Home() {
           </div>
         </div>
 
-        <section
-          className="nam-section nam-about"
-          id="sobre-mi"
-          aria-labelledby="about-title"
-        >
-          <div className="nam-container nam-about-grid">
-            <div className="nam-about-photo-wrap">
-              <img
-                className="nam-about-photo"
-                src="/nutrite-al-max-sobre-mi.webp"
-                alt="Leandro Horaiki, Licenciado en Nutrición"
-              />
-            </div>
-
-            <div>
-              <div className="nam-section-tag">
-                <span className="nam-num">01</span>
-                <span className="nam-section-tag-rule" />
-              </div>
-              <div className="nam-section-heading">
-                <p className="nam-eyebrow">Sobre mí</p>
-                <h2 id="about-title">Formación y enfoque profesional.</h2>
-              </div>
-              <p className="nam-about-text">
-                Soy Leandro Horaiki, Licenciado en Nutrición. Combino la
-                formación clínica con la antropometría ISAK II y una
-                especialización en nutrición deportiva para trabajar con
-                información medible: composición corporal, objetivos de
-                rendimiento y hábitos que se sostengan en el tiempo.
-              </p>
-
-              <ul className="nam-about-creds" aria-label="Formación profesional">
-                <li>
-                  <span className="nam-about-cred-title">
-                    Licenciado en Nutrición
-                  </span>
-                  <span className="nam-about-cred-desc">
-                    Formación universitaria en nutrición clínica y
-                    alimentación.
-                  </span>
-                </li>
-                <li>
-                  <span className="nam-about-cred-title">
-                    Antropometrista ISAK II
-                  </span>
-                  <span className="nam-about-cred-desc">
-                    Certificación internacional (International Society for
-                    the Advancement of Kinanthropometry) para medir
-                    composición corporal con precisión.
-                  </span>
-                </li>
-                <li>
-                  <span className="nam-about-cred-title">
-                    Diplomado en Nutrición Deportiva
-                  </span>
-                  <span className="nam-about-cred-desc">
-                    Especialización en alimentación aplicada al rendimiento
-                    y la actividad física.
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
         <section className="nam-section" id="guias" aria-labelledby="guides-title">
           <div className="nam-container">
             <div className="nam-section-tag">
-              <span className="nam-num">02</span>
+              <span className="nam-num">01</span>
               <span className="nam-section-tag-rule" />
             </div>
             <div className="nam-section-heading">
@@ -333,7 +282,7 @@ export default function Home() {
             />
             <div className="nam-consult-intro">
               <div className="nam-section-tag">
-                <span className="nam-num">03</span>
+                <span className="nam-num">02</span>
                 <span className="nam-section-tag-rule" />
               </div>
               <p className="nam-eyebrow">Contacto profesional</p>
@@ -405,6 +354,92 @@ export default function Home() {
                   <strong>@nutritealmax</strong>
                 </a>
               </address>
+            </div>
+          </div>
+        </section>
+
+        <section
+          className="nam-section nam-about"
+          id="sobre-mi"
+          aria-labelledby="about-title"
+        >
+          <div className="nam-container">
+            <div className="nam-section-tag">
+              <span className="nam-num">03</span>
+              <span className="nam-section-tag-rule" />
+            </div>
+            <div className="nam-section-heading nam-about-heading">
+              <p className="nam-eyebrow">Sobre mí</p>
+              <h2 id="about-title">
+                <button
+                  type="button"
+                  className="nam-about-toggle"
+                  aria-expanded={aboutOpen}
+                  aria-controls="about-panel"
+                  onClick={() => setAboutOpen((v) => !v)}
+                >
+                  <span>Formación y enfoque profesional.</span>
+                  <ChevronIcon />
+                </button>
+              </h2>
+            </div>
+
+            <div className="nam-about-panel" data-open={aboutOpen}>
+              <div className="nam-about-panel-inner">
+                <div
+                  id="about-panel"
+                  role="region"
+                  aria-labelledby="about-title"
+                  className="nam-about-copy"
+                >
+                  <img
+                    className="nam-about-photo-float"
+                    src="/nutrite-al-max-sobre-mi.webp"
+                    alt="Leandro Horaiki, Licenciado en Nutrición"
+                  />
+                  <p className="nam-about-text">
+                    Soy Leandro Horaiki, Licenciado en Nutrición. Combino la
+                    formación clínica con la antropometría ISAK II y una
+                    especialización en nutrición deportiva para trabajar con
+                    información medible: composición corporal, objetivos de
+                    rendimiento y hábitos que se sostengan en el tiempo.
+                  </p>
+
+                  <ul
+                    className="nam-about-creds"
+                    aria-label="Formación profesional"
+                  >
+                    <li>
+                      <span className="nam-about-cred-title">
+                        Licenciado en Nutrición
+                      </span>
+                      <span className="nam-about-cred-desc">
+                        Formación universitaria en nutrición clínica y
+                        alimentación.
+                      </span>
+                    </li>
+                    <li>
+                      <span className="nam-about-cred-title">
+                        Antropometrista ISAK II
+                      </span>
+                      <span className="nam-about-cred-desc">
+                        Certificación internacional (International Society
+                        for the Advancement of Kinanthropometry) para medir
+                        composición corporal con precisión.
+                      </span>
+                    </li>
+                    <li>
+                      <span className="nam-about-cred-title">
+                        Diplomado en Nutrición Deportiva
+                      </span>
+                      <span className="nam-about-cred-desc">
+                        Especialización en alimentación aplicada al
+                        rendimiento y la actividad física.
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </section>
