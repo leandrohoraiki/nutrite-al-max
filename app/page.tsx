@@ -1,4 +1,4 @@
-"use client";
+ �se client";
 
 import { useState, type CSSProperties, type MouseEvent } from "react";
 
@@ -28,19 +28,6 @@ function ArrowIcon() {
       focusable="false"
     >
       <path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" />
-    </svg>
-  );
-}
-
-function ChevronIcon() {
-  return (
-    <svg
-      className="nam-about-chevron"
-      viewBox="0 0 16 16"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <path d="M4 6.5 8 10l4-3.5" />
     </svg>
   );
 }
@@ -80,7 +67,6 @@ export default function Home() {
   const [hero, setHero] = useState({ mx: 0, my: 0 });
   const [card1, setCard1] = useState<SpotState>(idleSpot);
   const [card2, setCard2] = useState<SpotState>(idleSpot);
-  const [aboutOpen, setAboutOpen] = useState(false);
 
   function handleHeroMove(e: MouseEvent<HTMLElement>) {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -370,74 +356,105 @@ export default function Home() {
             </div>
             <div className="nam-section-heading nam-about-heading">
               <p className="nam-eyebrow">Sobre mí</p>
-              <h2 id="about-title">
-                <button
-                  type="button"
-                  className="nam-about-toggle"
-                  aria-expanded={aboutOpen}
-                  aria-controls="about-panel"
-                  onClick={() => setAboutOpen((v) => !v)}
-                >
-                  <span>Formación y enfoque profesional.</span>
-                  <ChevronIcon />
-                </button>
-              </h2>
+              <h2 id="about-title">Formación y enfoque profesional.</h2>
             </div>
 
-            <div className="nam-about-panel" data-open={aboutOpen}>
-              <div className="nam-about-panel-inner">
-                <div
-                  id="about-panel"
-                  role="region"
-                  aria-labelledby="about-title"
-                  className="nam-about-copy"
-                >
+            <div className="nam-about-intro">
+              <div className="nam-about-photo-wrap">
+                <img
+                  className="nam-about-photo"
+                  src="/nutrite-al-max-sobre-mi.webp"
+                  alt="Leandro Horaiki, Licenciado en Nutrición"
+                />
+              </div>
+              <div className="nam-about-intro-copy">
+                <p className="nam-about-text">
+                  Soy Leandro Horaiki, Licenciado en Nutrición. Combino la
+                  formación clínica con la antropometría ISAK II y una
+                  especialización en nutrición deportiva para trabajar con
+                  información medible: composición corporal, objetivos de
+                  rendimiento y hábitos que se sostengan en el tiempo.
+                </p>
+              </div>
+            </div>
+
+            <div className="nam-apartados" aria-label="Formación profesional">
+              <div className="nam-apartado">
+                <div className="nam-apartado-text">
+                  <span className="nam-apartado-num">01</span>
+                  <h3 className="nam-apartado-title">
+                    Licenciado en Nutrición
+                  </h3>
+                  <p className="nam-apartado-desc">
+                    Formación universitaria en nutrición clínica y
+                    alimentación.
+                  </p>
+                </div>
+                <div className="nam-apartado-media">
                   <img
-                    className="nam-about-photo-float"
-                    src="/nutrite-al-max-sobre-mi.webp"
+                    src="/nutrite-al-max-sobre-mi-licenciado.webp"
                     alt="Leandro Horaiki, Licenciado en Nutrición"
                   />
-                  <p className="nam-about-text">
-                    Soy Leandro Horaiki, Licenciado en Nutrición. Combino la
-                    formación clínica con la antropometría ISAK II y una
-                    especialización en nutrición deportiva para trabajar con
-                    información medible: composición corporal, objetivos de
-                    rendimiento y hábitos que se sostengan en el tiempo.
-                  </p>
+                </div>
+              </div>
 
-                  <ul
-                    className="nam-about-creds"
-                    aria-label="Formación profesional"
-                  >
-                    <li>
-                      <span className="nam-about-cred-title">
-                        Licenciado en Nutrición
-                      </span>
-                      <span className="nam-about-cred-desc">
-                        Formación universitaria en nutrición clínica y
-                        alimentación.
-                      </span>
-                    </li>
-                    <li>
-                      <span className="nam-about-cred-title">
-                        Antropometrista ISAK II
-                      </span>
-                      <span className="nam-about-cred-desc">
-                        Certificación internacional (International Society
-                        for the Advancement of Kinanthropometry) para medir
-                        composición corporal con precisión.
-                      </span>
-                    </li>
-                    <li>
-                      <span className="nam-about-cred-title">
-                        Diplomado en Nutrición Deportiva
-                      </span>
-                      <span className="nam-about-cred-desc">
-                        Especialización en alimentación aplicada al
-                        rendimiento y la actividad física.
-                      </span>
-                    </li>
-                  </ul>
+              <div className="nam-apartado">
+                <div className="nam-apartado-media">
+                  <img
+                    src="/nutrite-al-max-sobre-mi-antropometria.webp"
+                    alt="Leandro Horaiki realizando una evaluación antropométrica ISAK II"
+                    style={{ objectPosition: "center 15%" }}
+                  />
+                </div>
+                <div className="nam-apartado-text">
+                  <span className="nam-apartado-num">02</span>
+                  <h3 className="nam-apartado-title">
+                    Antropometrista ISAK II
+                  </h3>
+                  <p className="nam-apartado-desc">
+                    Certificación internacional (International Society for
+                    the Advancement of Kinanthropometry) para medir
+                    composición corporal con precisión.
+                  </p>
+                </div>
+              </div>
+
+              <div className="nam-apartado">
+                <div className="nam-apartado-text">
+                  <span className="nam-apartado-num">03</span>
+                  <h3 className="nam-apartado-title">
+                    Diplomado en Nutrición Deportiva
+                  </h3>
+                  <p className="nam-apartado-desc">
+                    Especialización en alimentación aplicada al rendimiento
+                    y la actividad física.
+                  </p>
+                </div>
+                <div className="nam-apartado-media">
+                  <img
+                    src="/nutrite-al-max-sobre-mi-deportiva.webp"
+                    alt="Leandro Horaiki asistiendo la nutrición deportiva del plantel en un entrenamiento"
+                  />
+                </div>
+              </div>
+
+              <div className="nam-apartado nam-apartado-featured">
+                <div className="nam-apartado-media nam-apartado-media-lg">
+                  <img
+                    src="/nutrite-al-max-sobre-mi-reserva.webp"
+                    alt="Leandro Horaiki, Nutricionista de la Reserva de Atlético Tucumán"
+                    style={{ objectPosition: "center 12%" }}
+                />
+                </div>
+                <div className="nam-apartado-text">
+                  <span className="nam-apartado-tag">Actualidad</span>
+                  <h3 className="nam-apartado-title">
+                    Nutricionista de la Reserva de Atlético Tucumán
+                  </h3>
+                  <p className="nam-apartado-desc">
+                    A cargo de la nutrición deportiva del plantel de
+                    Reserva.
+                  </p>
                 </div>
               </div>
             </div>
