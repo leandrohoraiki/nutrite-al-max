@@ -1,4 +1,4 @@
- �se client";
+"use client";
 
 import { useState, type CSSProperties, type MouseEvent } from "react";
 
