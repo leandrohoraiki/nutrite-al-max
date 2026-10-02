@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type CSSProperties, type MouseEvent } from "react";
+import InfoSection from "../components/InfoSection";
 
 const whatsappUrl = "https://wa.me/5493815051806";
 
@@ -132,6 +133,7 @@ export default function Home() {
               <a href="#inicio">Inicio</a>
               <a href="#guias">Guías</a>
               <a href="#consultas">Consultas</a>
+              <a href="#informacion">Información</a>
               <a href="#sobre-mi">Sobre mí</a>
             </nav>
             <a
@@ -343,6 +345,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <InfoSection />
 
         <section
           className="nam-section nam-about"
