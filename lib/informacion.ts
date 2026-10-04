@@ -66,6 +66,11 @@ export const infoItems: InfoItem[] = [
         "la recuperación depende también de cuándo volvés a entrenar.",
       ],
     ],
+    image: {
+      src: "/nutrite-al-max-info-alimentacion.webp",
+      alt: "Bowl de yogur con frutillas, kiwi y granola sobre la mesa, junto a un mate",
+      position: "center 60%",
+    },
     panel: "violet",
     panelWord: "Alimentación",
     article: {
@@ -344,8 +349,8 @@ export const infoItems: InfoItem[] = [
     ],
     image: {
       src: "/nutrite-al-max-info-antropometria.webp",
-      alt: "Manos de Leandro Horaiki midiendo un pliegue cutáneo con un plicómetro en la espalda de un deportista, durante una evaluación antropométrica",
-      position: "center 72%",
+      alt: "Mano de Leandro Horaiki sosteniendo un plicómetro Holway sobre el maletín de evaluación antropométrica",
+      position: "45% 42%",
     },
     panel: "violet",
     panelWord: "Antropometría",
